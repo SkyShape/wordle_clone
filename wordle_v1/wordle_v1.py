@@ -1,14 +1,17 @@
 import pathlib
 import random
+from string import ascii_letters
 
 
-words_list_path = pathlib.Path('wordlist.txt')
+words_list_path = pathlib.Path('wordlist2.txt')
 words_list = [
-    word.upper() for word in words_list_path.read_text(encoding="utf-8").strip().split('\n')
+    word.upper() for word in words_list_path.read_text(encoding="utf-8").split('\n')
+    if len(word) == 5 and all(letter in ascii_letters for letter in word)
     ]
 
 
 word = random.choice(words_list)
+print(word)
 
 
 for guess_num in range(1,7):
