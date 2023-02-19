@@ -1,0 +1,7 @@
+adder
+blacks
+crane   
+learn   
+quake
+snake
+word
