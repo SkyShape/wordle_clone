@@ -3,8 +3,8 @@ import sys
 from string import ascii_letters
 
 
-in_path = pathlib.Path(sys.argv[0])
-out_path = pathlib.Path(sys.argv[1])
+in_path = pathlib.Path(sys.argv[1])
+out_path = pathlib.Path(sys.argv[2])
 
 
 words = sorted(
@@ -13,7 +13,7 @@ words = sorted(
         for word in in_path.read_text(encoding="utf-8").split()
         if all(letter in ascii_letters for letter in word)
     },
-    key=lambda word: (len(word), word),
+    key=lambda word: (len(word), word), 
     )
 """
 Note: Only allowing the letters A to Z may be too limiting, especially if you want to create a word list in a language other than English.
@@ -30,4 +30,8 @@ This uses a negative character group, listing characters that aren’t allowed i
 
 
 out_path.write_text("\n".join(words))
-print(out_path)
+
+"""
+You can use the script to, for example, convert your current version of wyrdl.py to a word list as follows:
+$ python create_wordlist.py wyrdl.py wordlist.txt
+"""
