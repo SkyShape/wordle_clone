@@ -64,7 +64,7 @@ def main():
 
     # Process (main loop)
     for idx in range(6):
-        refresh_page(headline=f"Guess {idx + 1}")
+        # refresh_page(headline=f"Guess {idx + 1}")
         show_guess(guesses[idx], word)
         
 
