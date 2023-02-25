@@ -43,9 +43,9 @@ def show_guess(guess, word):
     return correct_letters, misplaced_letters, wrong_letters
 
 
-def game_over(word):
+def game_over(word, guess):
     """Show game over with correct word"""
-    print(f"You guess WRONG, the word was {word}")
+    print(f"Your guess is {guess}, the word was {word}")
 
 
 def main():
@@ -71,7 +71,7 @@ def main():
 
     # Post-process
     else:
-        game_over(word)
+        game_over(word, guess)
 
 
 if __name__ == "__main__":
